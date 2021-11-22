@@ -2,7 +2,7 @@ import React from 'react'
 import { renderRoutes } from 'react-router-config'
 import { Top, Tab, TabItem } from './style'
 import { NavLink } from 'react-router-dom'
-import '../../assets/iconfont'
+import '../../assets/iconfont/iconfont'
 
 function Home(props) {
   const { route } = props
@@ -10,9 +10,9 @@ function Home(props) {
   return (
     <div>
       <Top>
-        <span className='iconfont menu'>&#xe625;</span>
+        <span className='iconfont menu'>&#xe65c;</span>
         <span className='title'>Music App</span>
-        <span className='iconfont search'>&#xe626;</span>
+        <span className='iconfont search'>&#xe62b;</span>
       </Top>
       <Tab>
         <NavLink to='/recommend' activeClassName='selected'>

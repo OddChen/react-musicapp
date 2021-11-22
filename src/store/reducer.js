@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux-immutable'
+import { reducer as recommendReducer } from '../application/Recommend/store'
 
 export default combineReducers({
-  // 后续添加
+  recommend: recommendReducer,
 })

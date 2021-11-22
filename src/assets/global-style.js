@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 //扩大可点击区域
 const extendClick = () => {
   return `
