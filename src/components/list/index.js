@@ -1,6 +1,7 @@
 import React from 'react'
 import { ListWrapper, List, ListItem } from './style'
 import { getCount } from '../../api/utils.js'
+import LazyLoad from 'react-lazyload'
 
 function RecommendList(props) {
   return (
@@ -12,12 +13,23 @@ function RecommendList(props) {
             <ListItem key={item.id + index}>
               <div className='img_wrapper'>
                 <div className='decorate'></div>
-                <img
-                  src={item.picUrl + '?param=300*300'}
-                  width='100%'
-                  height='100%'
-                  alt='music'
-                />
+                {/* 加上param减少图片资源大小 */}
+                <LazyLoad
+                  placeholder={
+                    <img
+                      width='100%'
+                      src={require('./music.png')}
+                      alt='music'
+                    />
+                  }
+                >
+                  <img
+                    src={item.picUrl + '?param=300*300'}
+                    width='100%'
+                    height='100%'
+                    alt='music'
+                  />
+                </LazyLoad>
                 <div className='play_count'>
                   <i className='iconfont play'>&#xe885;</i>
                   <span className='count'>{getCount(item.playCount)}</span>
